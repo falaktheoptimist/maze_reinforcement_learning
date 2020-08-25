@@ -141,6 +141,11 @@ q.run()
 
 # Print optimal policy
 pol = np.reshape(np.array(list(q.policy)), np.shape(maze))
+pol = pol.astype(str)
+pol[pol=='3'] = '⭣'
+pol[pol=='2'] = '→'
+pol[pol=='1'] = '←'
+pol[pol=='0'] = '↑'
 print(pol)
-
+print(maze)
 # Note: in output, 0 = Up, 1 = Left, 2 = Right, 3 = Down
